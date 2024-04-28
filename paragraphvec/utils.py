@@ -20,7 +20,7 @@ _DBOW_MODEL_NAME = ("{:s}_model.{:s}_numnoisewords.{:d}_vecdim.{:d}"
                     "_batchsize.{:d}_lr.{:f}_epoch.{:d}_loss.{:f}.pth.tar")
 _DBOW_DIAGNOSTIC_FILE_NAME = ("{:s}_model.{:s}_numnoisewords.{:d}_vecdim.{:d}"
                               "_batchsize.{:d}_lr.{:f}.csv")
-_INTERMEDIATE_MODEL_NAME = "intermediate_{:s}_model.{:s}_vecdim.{:d}.tar"
+_INTERMEDIATE_MODEL_NAME = "{:s}_model.{:s}_vecdim.{:d}_intermediate.tar"
 
 def save_training_state(data_file_name,
                         model_ver,
