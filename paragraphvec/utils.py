@@ -112,7 +112,7 @@ def save_training_state(data_file_name,
             loss)
 
     model_file_path = join(MODELS_DIR, model_file_name)
-    merge_file_path = join(MODELS_DIR, "intermediate/" + "model_dbow" if model_ver_is_dbow else "model_dm")
+    merge_file_path = join(MODELS_DIR, "intermediate/" + ("model_dbow" if model_ver_is_dbow else "model_dm"))
 
     if save_all:
         torch.save(model_state, model_file_path)
