@@ -77,7 +77,7 @@ def _write_to_file(data_file_name, model_file_name, model, vec_dim):
 
             result_lines.append(result_line)
 
-    result_file_name = model_file_name[:-7] + 'csv'
+    result_file_name = model_file_name[:-8] + '.csv'
 
     with open(join(DATA_DIR, result_file_name), 'w') as f:
         writer = csv.writer(f)
