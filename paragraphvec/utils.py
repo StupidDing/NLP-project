@@ -20,7 +20,7 @@ _DBOW_MODEL_NAME = ("{:s}_model.{:s}_numnoisewords.{:d}_vecdim.{:d}"
                     "_batchsize.{:d}_lr.{:f}_epoch.{:d}_loss.{:f}.pth.tar")
 _DBOW_DIAGNOSTIC_FILE_NAME = ("{:s}_model.{:s}_numnoisewords.{:d}_vecdim.{:d}"
                               "_batchsize.{:d}_lr.{:f}.csv")
-
+_INTERMEDIATE_MODEL_NAME = "intermediate_{:s}_model.{:s}_vecdim.{:d}.tar"
 
 def save_training_state(data_file_name,
                         model_ver,
@@ -111,14 +111,14 @@ def save_training_state(data_file_name,
             epoch_i + 1,
             loss)
 
-    merge_file_name = _DBOW_MODEL_NAME.format(
+    merge_file_name = _INTERMEDIATE_MODEL_NAME.format(
         data_file_name[:-4],
         model_ver,
-        vec_dim,
+        vec_dim
     )
 
     model_file_path = join(MODELS_DIR, model_file_name)
-    merge_file_path = join(MODELS_DIR, "intermediate_" + merge_file_name)
+    merge_file_path = join(MODELS_DIR, merge_file_name)
 
     if save_all:
         torch.save(model_state, model_file_path)
