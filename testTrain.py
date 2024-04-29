@@ -13,7 +13,7 @@ def main():
     args = parser.parse_args()
 
     data_df = pandas.read_csv(args.filename)
-    label_df = pandas.read_csv(f'./{args.type}/{args.type}_label.csv')
+    label_df = pandas.read_csv(f'./{args.type}_test/{args.type}_label.csv')
 
     features = data_df.columns[:]
     label = label_df.columns[0]
@@ -41,8 +41,8 @@ def main():
     print(f"Accuracy: {accuracy:.2f}")
 
     df = pandas.read_csv("result.csv")
-    new_data = {'Dataset': args.type, 'Dim': args.dim1+args.dim2, 'DimDBOW': args.dim1, "DimDM": args.dim2, "Accuracy": f"{accuracy:.2f}"}
-    df.append(new_data, ignore_index=True)
+    new_data = {'Dataset': args.type, 'Dim': int(args.dim1)+int(args.dim2), 'DimDBOW': args.dim1, "DimDM": args.dim2, "Accuracy": f"{accuracy:.2f}"}
+    df = df._append(new_data, ignore_index=True)
     df.to_csv("result.csv", index=False)
 
 if __name__ == "__main__":

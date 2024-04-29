@@ -18,9 +18,9 @@ def main():
     combine = pandas.DataFrame()
     id = 0
     for col in dbow.columns:
-        id +=1
+        id += 1
         combine["dim"+str(id)] = dbow[col]
-    for col in dbow.columns:
+    for col in dm.columns:
         id += 1
         combine["dim" + str(id)] = dm[col]
 
