@@ -14,3 +14,12 @@ Dim,DimDBOW,DimDM,Accuracy,Dataset
 100,70,30,0.46,sentiment
 100,80,20,0.54,sentiment
 100,90,10,0.47,sentiment
+100,10,90,0.59,sentiment
+100,20,80,0.7,sentiment
+100,30,70,0.72,sentiment
+100,40,60,0.74,sentiment
+100,50,50,0.76,sentiment
+100,60,40,0.73,sentiment
+100,70,30,0.7,sentiment
+100,80,20,0.78,sentiment
+100,90,10,0.72,sentiment
